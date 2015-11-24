@@ -1,0 +1,38 @@
+table td{
+  width: 1em;
+  height: 1em;
+  border: 1px solid black;
+  text-align: center;
+  padding: 0.5em;
+}
+
+#contenido{
+  display: flex;
+}
+
+#form{
+  flex:1;
+}
+#mensaje{
+  text-align: center;
+  padding-top: 1em;
+  flex:2;
+  display: flex;
+}
+
+table{
+  margin: 1em 1em 0 1em;
+  border-collapse: collapse;
+}
+
+input{
+  display: block;
+}
+
+.error{
+  color: red;
+}
+
+input.error{
+  border: 1px solid red;
+}

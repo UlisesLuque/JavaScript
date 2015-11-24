@@ -1,0 +1,52 @@
+<!-- 
+	autor:Ulises Luque Páez
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Arrays Matémáticos</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/arraysMatematicos.js"></script>
+</head>
+<body>
+	<p>Mediante prototype, agrega los métodos sumar, restar, trasponer y multiplicar a la clase ArraysMatematicos. Recuerda que el estado de un array deberían de ser los elementos.
+		Recuerda las restricciones y posibilidades de un Array:</p>
+	<ul>
+		<li>Sobre las dimensines de los arrays implicados (unidimensional, bidimensional...)</li>
+		<li> Sobre las longitudes de los arrays implicados (1 en adelante)</li>
+		<li>Sobre los contenidos de los arrays implicados (numéricos)</li>
+		<li>Podemos rellenar un Array con valores aleatorios o directamente desde teclado.</li>
+	</ul>
+
+	<p>Una vez creada la clase, demuestra su funcionamiento en una página bien diseñada. Evita las cajas de texto y hazla lo más dinámica posible.</p>
+
+	<div id="contenido">
+		<div id="form">
+			<fieldset>
+				<legend>Primera matriz</legend>
+				<label>Número de filas</label>
+				<input id="filas1" type="number">
+				<label>Número de columnas</label>
+				<input id="columnas1" type="number">
+			</fieldset>
+			<fieldset>
+				<legend>Segunda matriz</legend>
+				<label>Número de filas</label>
+				<input id="filas2" type="number">
+				<label>Número de columnas</label>
+				<input id="columnas2" type="number">
+			</fieldset>
+			<select name="opcion" id="opcion">
+				<option value="sumar">Sumar</option>
+				<option value="restar">Restar</option>
+				<option value="trasponer">Trasponer</option>
+				<option value="multiplicar">Multiplicar</option>
+			</select>
+			<button id="establecer">Establecer</button>
+		</div>
+		<div id="mensaje"></div>
+	</div>
+</body>
+</html>

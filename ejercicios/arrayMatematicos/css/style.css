@@ -16,6 +16,7 @@ table td{
 #mensaje{
   text-align: center;
   padding-top: 1em;
+  margin-left: 2em;
   flex:2;
   display: flex;
 }

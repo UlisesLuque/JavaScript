@@ -1,13 +1,19 @@
-table td{
-  width: 1em;
-  height: 1em;
-  border: 1px solid black;
-  text-align: center;
-  padding: 0.5em;
+*{
+  margin: 0;
+}
+
+main:first-child article{
+  font-family: verdana;
+  background: #2196f3;
+  color: white;
+  padding: 2em;
+
+  line-height: 1.5em;
 }
 
 #contenido{
   display: flex;
+  padding: 2em;
 }
 
 #form{
@@ -17,13 +23,25 @@ table td{
   text-align: center;
   padding-top: 1em;
   margin-left: 2em;
-  flex:2;
+  flex:3;
   display: flex;
 }
 
 table{
   margin: 1em 1em 0 1em;
   border-collapse: collapse;
+  background: #2196f3;
+  color: white;
+  box-shadow: 0 0 10px grey;
+}
+
+
+table td{
+  width: 1em;
+  height: 1em;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  padding: 0.5em;
 }
 
 input{
@@ -34,6 +52,22 @@ input{
   color: red;
 }
 
+fieldset{
+  border: 1px solid #e0e0e0;
+}
+
 input.error{
   border: 1px solid red;
+}
+
+button{
+  margin: 1em;
+  border: none;
+  background: #2196f3;
+  color: white;
+  padding: 0.2em 0.5em;
+}
+
+button:hover{
+  opacity: 0.8;
 }

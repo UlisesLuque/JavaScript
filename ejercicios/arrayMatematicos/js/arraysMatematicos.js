@@ -84,7 +84,7 @@ window.addEventListener("load", function(){
 					matrizResultado[i][j] = this.matriz[j][i];
 				}
 			}
-			return matrizResultado;
+			this.matriz = matrizResultado;
 		}
 
 		ArraysMatematicos.prototype.toString = function(){
@@ -104,7 +104,7 @@ window.addEventListener("load", function(){
 			for(var i=0; i<this.filas; i++){
 				this.matriz[i] = [];
 				for(var j=0; j<this.columnas; j++){
-					this.matriz[i][j] = Math.round((Math.random()*10) + 1 ) ;
+					this.matriz[i][j] = Math.round(Math.random()*11) ;
 				}
 			}
 		}
@@ -121,7 +121,8 @@ window.addEventListener("load", function(){
 						matrizResultado.matriz = matriz1.restar(matriz2);
 						break;
 					case "trasponer":
-						matrizResultado.matriz = matriz1.trasponer();
+						matriz1.trasponer();
+						matrizResultado.matriz = matriz1.matriz;
 						break;
 					case "multiplicar":
 						matrizResultado.matriz = matriz1.multiplicar(matriz2);
@@ -149,8 +150,8 @@ window.addEventListener("load", function(){
 		}
 
 		function comprobarDimensiones(filas1, columnas1, filas2, columnas2){
-			if (filas1 == 0|| columnas1 == 0 || filas2 == 0 || columnas2 == 0) {
-				throw new Exception("Introduce algún valor.");
+			if (filas1 <1|| columnas1 <1 || filas2 <1 || columnas2 <1) {
+				throw new Exception("Introduce números positivos.");
 			}
 			switch (document.getElementById('opcion').value){
 				case "sumar":
@@ -159,11 +160,12 @@ window.addEventListener("load", function(){
 					};
 				case "restar":
 					if (filas1 != filas2 || columnas1 != columnas2 && filas1 == columnas1) {
-						throw new Exception("Para sumar dos matrices el número de filas y de columnas de ambas deben ser iguales.");
+						throw new Exception("Para restar dos matrices el número de filas y de columnas de ambas deben ser iguales.");
+						alert("hola");
 					};	
 				case "multiplicar":
-					if (filas1 != filas2 || columnas1 != columnas2) {
-						throw new Exception("Para sumar dos matrices el número de filas y de columnas de ambas deben ser iguales.");
+					if (filas1 != columnas2 || columnas1 != filas2) {
+						throw new Exception("Para multiplicar dos matrices el número de filas y de columnas de ambas deben ser iguales.");
 					};
 				default:
 					return true;
@@ -172,24 +174,38 @@ window.addEventListener("load", function(){
 
 
 		var boton = document.getElementById('establecer');
+		var select = document.getElementById('opcion');
+		select.addEventListener("change", function(){
+			if(select.value == "trasponer")
+				document.getElementById('datosMatriz2').style.display = "none";
+			else
+				document.getElementById('datosMatriz2').style.display = "block";
+		});
 		boton.addEventListener("click", function(){
 			var filas1 = document.getElementById('filas1').value;
 			var columnas1 = document.getElementById('columnas1').value;
 			var filas2 = document.getElementById('filas2').value;
 			var columnas2 = document.getElementById('columnas2').value;
 			try{
-				if(comprobarDimensiones(filas1, columnas1, filas2, columnas2)){
-					var matriz1 = new ArraysMatematicos(filas1, columnas1);
-					matriz1.rellenarMatriz();
-					var matriz2 = new ArraysMatematicos(filas2, columnas2);
-					matriz2.rellenarMatriz();
-					var matrizResultado = new ArraysMatematicos();
-					matrizResultado = operar(matriz1, matriz2);
+				if(select.value != "trasponer"){
+					comprobarDimensiones(filas1, columnas1, filas2, columnas2);
+				} 
+				var matriz1 = new ArraysMatematicos(filas1, columnas1);
+				matriz1.rellenarMatriz();
+				var matriz2 = new ArraysMatematicos(filas2, columnas2);
+				matriz2.rellenarMatriz();
+				var matrizResultado = new ArraysMatematicos();
+				matrizResultado = operar(matriz1, matriz2);
+				if(select.value != "trasponer"){
+					comprobarDimensiones(filas1, columnas1, filas2, columnas2);
 					document.getElementById('mensaje').innerHTML = "<div>Matriz 1: " + 
 					matriz1.toString() + "</div><div>Matriz 2: " + matriz2.toString() + 
 					"</div><div>Matriz resultado: " +matrizResultado.toString() + "</div>";
-					toogleError(false);
+				} else {
+					document.getElementById('mensaje').innerHTML = "<div>Matriz 1: " + 
+					matriz1.toString()+ "</div><div>Matriz resultado: " +matrizResultado.toString() + "</div>";
 				}
+					toogleError(false);	
 			} catch (e) {
 				toogleError(true, e);
 			}

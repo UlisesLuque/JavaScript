@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Formulario</title>
+	<script type="text/javascript" src="js/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<form action='new.es' method='post' onsubmit="return false">
+			<label for='nombre'>Nombre</label><input type='text' id='nombre'/><span class='error'></span>
+			<label for='fecha'>Fecha de nacimiento</label><input type='text' id='fecha' placeholder='dd/mm/AAAA'/><span class='error'></span>
+			<label for='dni'>DNI</label><input type='text' id='dni'/><span class='error'></span>
+			<label for='cuenta'>Número de cuenta</label><input type='text' id='cuenta'/><span class='error'></span>
+			<label for='telefono'>Teléfono</label><input type='text' id='telefono'><span class='error'></span>
+	
+			<fieldset id='sexo'>
+				<legend>Sexo</legend>
+				<label>Hombre:</label> <input type='radio' id='hombre' name='sexo' value='hombre'/>
+				<label>Mujer:</label> <input type='radio' id='mujer' name='sexo' value='mujer'/>
+			</fieldset>
+			<span class='error'></span>
+			
+	
+			<label for='circulacion'>Permiso de circulación</label>
+			<select id='circulacion'>
+				<option value=''>Elige una opción</option>
+				<option value='si'>Si</option>
+				<option value='no'>No</option>
+			</select>
+			<span class='error'></span>
+
+			<label>Conocimientos de ingles:</label><input type='checkbox' id='ingles' value='ingles'/>
+			<label>Conocimientos en informática</label><input type='checkbox' id='informatica' value='informatica'/>
+			<label>Conocimientos en administracion</label><input type='checkbox' id='administracion' value='administracion'/>
+			<span class='error'></span>
+			
+			<label for='curriculum'>Curriculum digital</label><input type='text' id='curriculum'/><span class='error'></span>
+			<input type='submit' value='Enviar' id='enviar'/>
+	
+			<input type='reset' value='Limpiar' id='limpiar'/>
+	
+	</form>
+	</body>
+</html>

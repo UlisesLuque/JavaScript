@@ -31,7 +31,7 @@ function comprobarDNI(value){
 	var letras = ['T','R','W','A','G','M','Y','F','P','D','X', 'B','N','J','Z','S','Q','H','L','C','K','E','T'];
 	if(!(/^\d{8}[a-zA-Z]$/.test(value)))
 		return false;
-	if(value.toUpperCase(charAt(8)) != letras[(value.substring(0, 8)%23)])
+	if(value.toUpperCase().charAt(8) != letras[(value.substring(0, 8)%23)])
 		return false;
 	return true;
 }
@@ -53,8 +53,10 @@ function comprobarCuenta(value){
         for (i=0; i<=9; i++)
         control += parseInt(cuenta.charAt(i)) * valores[i];
         control = 11 - (control % 11);
-        if (control == 11) control = 0;
-        else if (control == 10) control = 1;
+        if (control == 11) 
+        	control = 0;
+        else if (control == 10) 
+        	control = 1;
         if(control!=parseInt(dc.charAt(1))) {
             return false;
         }
@@ -115,6 +117,10 @@ function comprobarCheckBoxes(checkBoxes){
 	}
 }
 
+function comprobarCorreo(value){
+	return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(value);
+}
+
 
 window.addEventListener("load", function(){
 	function comprobarDatos(){
@@ -173,6 +179,12 @@ window.addEventListener("load", function(){
 			inputNombre.focus();
 			ok = false;
 		}
+		if(!comprobarCorreo(inputCorreo.value)){
+			inputCorreo.className="error";
+			inputCorreo.nextSibling.innerHTML = "Nombre no válido.";
+			inputCorreo.focus();
+			ok = false;
+		}
 
 		return ok;
 	}
@@ -214,6 +226,7 @@ window.addEventListener("load", function(){
 	var inputNombre = document.getElementById("nombre");
 	var inputFecha = document.getElementById("fecha");
 	var inputDNI = document.getElementById("dni");
+	var inputCorreo = document.getElementById("correo");
 	var inputCuenta = document.getElementById("cuenta");
 	var inputTelefono = document.getElementById("telefono");
 	var checkBoxIngles = document.getElementById("ingles");
@@ -262,6 +275,13 @@ window.addEventListener("load", function(){
 
 	inputCurriculum.addEventListener("blur", function(){
 		if(!comprobarURL(this.value)){
+			this.className="error";
+			this.nextSibling.innerHTML = "Dirección no válida.";
+			this.focus();
+		}
+	})
+	inputCorreo.addEventListener("blur", function(){
+		if(!comprobarCorreo(this.value)){
 			this.className="error";
 			this.nextSibling.innerHTML = "Dirección no válida.";
 			this.focus();

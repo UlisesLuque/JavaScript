@@ -5,9 +5,7 @@
 
 
 function comprobarNombre(value){
-	if(!(/^\w{3,}$/.test(value)))
-		return false;
-	return true;
+	return /^\w{3,}$/.test(value);
 }
 
 function comprobarFecha(fecha){
@@ -74,22 +72,12 @@ function comprobarCuenta(value){
     }
 }
 
-function comprobarNombre(value){
-	if(!(/^\w{3,}$/.test(value)))
-		return false;
-	return true;
-}
-
 function comprobarTelefono(value){
-	if(!(/^[967]\d{8}$/.test(value)))
-		return false;
-	return true;
+	return /^[967]\d{8}$/.test(value);
 }
 
 function comprobarURL(value){
-	if(!(/^((http|https)\:\/\/)?(www.)?[a-z0-9\.-]+\.[a-z]{2,4}/.test(value)))
-		return false;
-	return true;
+	return /^((http|https)\:\/\/)?(www.)?[a-z0-9\.-]+\.[a-z]{2,4}/.test(value)
 }
 
 function comprobarRadio(input){

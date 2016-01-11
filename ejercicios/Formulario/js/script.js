@@ -73,7 +73,7 @@ function comprobarCuenta(value){
 }
 
 function comprobarTelefono(value){
-	return /^[967]\d{8}$/.test(value);
+	return /^[9678]\d{8}$/.test(value);
 }
 
 function comprobarURL(value){
@@ -253,6 +253,13 @@ window.addEventListener("load", function(){
 			this.focus();
 		}
 	})
+	inputCorreo.addEventListener("blur", function(){
+		if(!comprobarCorreo(this.value)){
+			this.className="error";
+			this.nextSibling.innerHTML = "Dirección no válida.";
+			this.focus();
+		}
+	})
 	inputTelefono.addEventListener("blur", function(){
 		if(!comprobarTelefono(this.value)){
 			this.className="error";
@@ -263,13 +270,6 @@ window.addEventListener("load", function(){
 
 	inputCurriculum.addEventListener("blur", function(){
 		if(!comprobarURL(this.value)){
-			this.className="error";
-			this.nextSibling.innerHTML = "Dirección no válida.";
-			this.focus();
-		}
-	})
-	inputCorreo.addEventListener("blur", function(){
-		if(!comprobarCorreo(this.value)){
 			this.className="error";
 			this.nextSibling.innerHTML = "Dirección no válida.";
 			this.focus();

@@ -149,6 +149,12 @@ window.addEventListener("load", function(){
 			inputCuenta.focus();
 			ok = false;
 		}
+		if(!comprobarCorreo(inputCorreo.value)){
+			inputCorreo.className="error";
+			inputCorreo.nextSibling.innerHTML = "Nombre no válido.";
+			inputCorreo.focus();
+			ok = false;
+		}
 		if(!comprobarDNI(inputDNI.value)){
 			inputDNI.className="error";
 			inputDNI.nextSibling.innerHTML = "DNI no válido.";
@@ -165,12 +171,6 @@ window.addEventListener("load", function(){
 			inputNombre.className="error";
 			inputNombre.nextSibling.innerHTML = "Nombre no válido.";
 			inputNombre.focus();
-			ok = false;
-		}
-		if(!comprobarCorreo(inputCorreo.value)){
-			inputCorreo.className="error";
-			inputCorreo.nextSibling.innerHTML = "Nombre no válido.";
-			inputCorreo.focus();
 			ok = false;
 		}
 

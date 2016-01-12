@@ -232,42 +232,42 @@
 			if(!comprobarNombre(this.value)){
 				this.className="error";
 				this.nextSibling.innerHTML = "Nombre no válido.";
-				inputFocus = this;
+				this.focus();
 			}
 		})
 		inputFecha.addEventListener("blur", function(){
 			if(!comprobarFecha(this.value)){
 				this.className="error";
 				this.nextSibling.innerHTML = "Fecha no válida.";
-				inputFocus = this;
+				this.focus();
 			}
 		})
 		inputDNI.addEventListener("blur", function(){
 			if(!comprobarDNI(this.value)){
 				this.className="error";
 				this.nextSibling.innerHTML = "DNI no válido.";
-				inputFocus = this;
+				this.focus();
 			}
 		})
 		inputCuenta.addEventListener("blur", function(){
 			if(!comprobarCuenta(this.value)){
 				this.className="error";
 				this.nextSibling.innerHTML = "Cuenta no válida.";
-				inputFocus = this;
+				this.focus();
 			}
 		})
 		inputCorreo.addEventListener("blur", function(){
 			if(!comprobarCorreo(this.value)){
 				this.className="error";
 				this.nextSibling.innerHTML = "Dirección no válida.";
-				inputFocus = this;
+				this.focus();
 			}
 		})
 		inputTelefono.addEventListener("blur", function(){
 			if(!comprobarTelefono(this.value)){
 				this.className="error";
 				this.nextSibling.innerHTML = "Telefono no válido.";
-				inputFocus = this;
+				this.focus();
 			}
 		})
 
@@ -275,11 +275,10 @@
 			if(!comprobarURL(this.value)){
 				this.className="error";
 				this.nextSibling.innerHTML = "Dirección no válida.";
-				inputFocus = this;
+				this.focus();
 			}
 		})
 
-		inputFocus.focus();
 		document.forms[0].addEventListener("submit", comprobarDatos);
 	})
 

@@ -1,0 +1,58 @@
+<!--
+	autor: Ulises Luque Páez
+-->
+
+<!DOCTYPE html>
+<html lang='es'>
+	<head>
+		<meta charset='UTF-8'>
+		<title>titulo</title>
+		<link rel='stylesheet' type='text/css' href='css/style.css'>
+		<script type='text/javascript' src='cookies/script.js'></script>
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="cookies.html">Cookies</a></li>
+				<li><a href="sessionStorage.html">sessionStorage</a></li>
+				<li><a href="localStorage.html">localStorage</a></li>
+			</ul>
+		</nav>
+
+		<main>
+			<section>
+				<article>
+					<h1>¿Que son las cookies?</h1>
+					<p>
+						Las cookies son datos, almacenados en un pequeño archivo de texto. El tamaño máximo de una cookie es 4KB.
+					</p>
+					<p>
+						Cuando el servidor envia una página web al navegador, la conexión finaliza, y el servidor olvida todo respecto al usuario. Las cookies se inventaron para resolver este problema.
+					</p>
+					<p>
+						Las cookies se guaardan en un par de nombre-valor como:
+						username = Ulises Luque Páez
+					</p>
+					<p>
+						En javaScript se pueden crear, leer y eliminar cookies con la propiedad document.cookie .
+					</p>
+					<p>
+						document.cookie = "username=Ulises Luque Páez; expires=Thu, 18 Dec 205 12:00:00 UTC";
+					</p>
+					<p>
+						var x = document.cookie;
+					</p>
+					<p>Para cambiar el valor de una cookie basta con reasignarle un valor.</p>
+				</article>
+			</section>
+			<section>
+				<form action="" method="POST">
+					<label>Usuario</label><input type="text" id="nombre">
+					<label>Contraseña</label><input type="password" id="password">
+					<input type="submit" value="enviar" id="enviar">
+				</form>
+			</section>
+		</main>
+	</body>
+</html>

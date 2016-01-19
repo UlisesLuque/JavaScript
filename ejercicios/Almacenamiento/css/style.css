@@ -1,0 +1,76 @@
+html, body{
+  margin: 0;
+  padding: 0;
+  font-family: "Verdana";
+  background: whitesmoke;
+}
+
+nav{
+  padding: 0.1em 0;
+  background: black;
+}
+
+nav ul{
+  display: flex;
+}
+
+nav li{
+  text-align: center;
+  flex: 1;
+  margin: 0em 1em;
+  list-style: none;
+}
+
+nav a{
+  color: white;
+  text-decoration: none;
+}
+
+main{
+  padding: 2em;
+}
+
+main article{
+  box-shadow: 0px 0px 15px lightgray;
+  border-radius: 5px;
+  padding: 1em;
+  background: white;
+}
+
+main h1{
+  padding: 0em 0  0 1em;
+}
+
+main p{
+  margin: 1em 2em;
+}
+
+form{
+  padding: 2em;
+  margin: 2em 0em;
+}
+
+form label{
+  margin: 0 0.5em 0 0;
+}
+
+form input:nth-child(2){
+  margin: 0 3em 0 0;
+}
+
+form input[type=submit]{
+  border-radius: 2px;
+  border: none;
+  background: #1a237e;
+  padding: 0.16em 0.7em;
+  color: white;
+  cursor: pointer;
+}
+
+form input[type=submit]:hover{
+  background: white;
+  color: #1a237e;
+  border: 2px solid #1a237e;
+  padding: 0em 0.55em;
+}
+

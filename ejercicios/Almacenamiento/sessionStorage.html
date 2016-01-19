@@ -1,0 +1,60 @@
+<!--
+	autor: Ulises Luque Páez
+-->
+
+<!DOCTYPE html>
+<html lang='es'>
+	<head>
+		<meta charset='UTF-8'>
+		<title>titulo</title>
+		<link rel='stylesheet' type='text/css' href='css/style.css'>
+		<script type='text/javascript' src='sessionStorage/script.js'></script>
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="cookies.html">Cookies</a></li>
+				<li><a href="sessionStorage.html">sessionStorage</a></li>
+				<li><a href="localStorage.html">localStorage</a></li>
+			</ul>
+		</nav>
+
+		<main>
+			<section>
+				<article>
+					<h1>¿Que es Session Storage?</h1>
+					<p>
+						Con Session Storage, las aplicaciones web pueden almacenar datos localmente sin el navegador del usuario.
+					</p>
+					<p>
+						La única diferencia entre Local Storage y Session Storage es que en Local Storage, los datos son almacenados solo durante la sesión. Los datos son eliminados cuando se cierra la pestaña del navegador.
+					</p>
+					<p>
+						Para almacenar un dato en Session Storage se utiliza el método setItem:
+						sessionStorage.setItem("apellido", "Luque");
+					</p>
+					<p>
+						También se puede utilizar la siguiente sintaxis:
+						sessionStorage.lastname = "Smith";
+					</p>
+					<p>
+						Para eliminar un dato de Session Storage se utliza el método removeItem:
+						sessionStorage.removeItem("apellido");
+					</p>
+					<p>
+						var x = document.cookie;
+					</p>
+					<p>Para cambiar el valor de una cookie basta con reasignarle un valor.</p>
+				</article>
+			</section>
+			<section>
+				<form>
+					<label>Usuario</label><input type="text"  id="nombre">
+					<label>Contraseña</label><input type="password" id="password">
+					<input type="submit" value="enviar" id="enviar">
+				</form>
+			</section>
+		</main>
+	</body>
+</html>

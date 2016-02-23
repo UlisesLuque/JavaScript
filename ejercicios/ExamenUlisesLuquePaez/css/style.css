@@ -1,0 +1,55 @@
+.error{
+  outline: 1px red solid;
+}
+
+form{
+  width: 23em;
+  background: lightgreen;
+  padding: 0.1em 2em;
+  height: 21em;
+}
+
+span{
+  float: right;
+  display: block;
+  margin-top: -1.8em;
+  color: red;
+}
+
+p>span:nth-child(3){
+  float: left;
+}
+input{
+  float: right;
+  margin-top: -4em;
+}
+
+label{
+  display: block;
+  margin: 2em 0;
+}
+
+p label{
+  margin: 0 1.5em;
+}
+
+input[type=checkbox]{
+  float: left;
+  margin: 0.3em 0;
+  display: inline;
+}
+label:nth-child(14){
+  float: inherit;
+}
+
+input[type=button], input[type=reset]{
+  margin-top: -1em;
+}
+
+input[type=reset]{
+  margin-right: 0.5em;
+}
+
+p{
+  margin: 1em 0 3em 0em;;
+}

@@ -1,0 +1,25 @@
+<!--
+	autor: Ulises Luque Páez
+-->
+
+<!DOCTYPE html>
+<html lang='es'>
+	<head>
+		<meta charset='UTF-8'>
+		<title>titulo</title>
+		<link rel='stylesheet' type='text/css' href='css/style.css'>
+		<script type='text/javascript' src='js/universitario.js'></script>
+	</head>
+	<body>
+		<form action='' method='post'>
+				<label>Nombre</label><input type='text' name='texto' id="nombre"/><span id = "errorNombre"></span>
+				<label>Primer apellido</label><input type='text' name='texto' id="apellido1"/><span id = "errorApellido1"></span>
+				<label>Segundo apellido</label><input type='text' name='texto' id="apellido2"/><span id = "errorApellido2"></span>
+				<label>Fecha de nacimiento</label><input type='text' name='texto' id="fecha" placeholder="dd-mm-AAAA"/><span id = "errorFecha"></span>
+				<p><input id="checkbox" type="checkbox"><label>Acepto las condiciones</label><span id = "errorCheckbox"></span></p>
+				<input type="button" id="crear" value="Crear">
+				<input id="limpiar" type="reset" value="Limpiar">
+		
+		</form>
+	</body>
+</html>

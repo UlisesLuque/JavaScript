@@ -1,0 +1,126 @@
+body{
+  display: flex;
+  background: whitesmoke;
+  font-family: "Verdana";
+  font-size: 11pt;
+}
+
+div#contentList{
+  display: flex;
+  flex-direction: column;
+  margin: 3em;
+  flex: 1;
+  border-radius: 1em;
+  
+}
+
+form{
+  display: inline-block;
+  width: 25em;
+  background: #26A69A;
+  padding: 0 3em;
+  border-radius: 1em;
+  margin: 3em;
+  box-shadow: 0 0 5px 1px darkgrey;
+  height: 38em;
+}
+
+span{
+
+}
+
+span.error{
+    box-shadow: 0 0 5px 0px red;
+    position: relative;
+    float: right;
+    margin: -4.1em -5em 0 0;
+    font-size: 7pt;
+    border-radius: 0em 1em 1em 1em;
+    max-width: 18em;
+    background: rgba(255,255,255,0.6);
+    padding: 0.3em 0.3em;
+}
+
+span:nth-child(14){
+  margin-top: 0.5em;
+}
+
+
+span.error:nth-child(17){
+  position: absolute;
+  left: 13em;
+}
+
+form>label{
+  display: block;
+  margin: 3.15em 0;
+}
+
+form>label:nth-child(16){
+  display:block;
+  margin-left: 2em;
+}
+
+input{
+  border-radius: 0.4em;
+}
+
+input[type=text]{
+  float: right;
+  margin-top: -5.1em;
+  padding-left: 0.5em;
+}
+
+
+input.error{
+  box-shadow: 0 1px 3px 0.5px red;
+}
+
+fieldset{
+  border-radius: 0.5em;
+}
+
+fieldset input{
+  float: right;
+}
+
+
+input.error[type=radio]{
+  border-radius: 3em;
+}
+
+input[type=checkbox]{
+  position: absolute;
+  top: 35.5em;
+}
+
+
+p{
+  display: block;
+}
+
+
+div#info, ul{
+  box-shadow: 0 0 5px 1px darkgrey;
+  background: #26a69a;
+  display: inline-block;
+  border-radius: 10px;
+  display: block;
+  padding: 2em;
+  margin: 0;
+}
+
+div#info{
+  margin-bottom: 2em;
+}
+
+ul{
+  flex: 1;
+  padding: 1em 3em;
+  max-height: 29em;
+  overflow: scroll;
+}
+
+ul li{
+  margin: 1em 0;
+}

@@ -1,0 +1,39 @@
+<!--
+	autor: Ulises Luque Páez
+-->
+
+<!DOCTYPE html>
+<html lang='es'>
+	<head>
+		<meta charset='UTF-8'>
+		<title>Ulises Luque Páez</title>
+		<script type='text/javascript' src='js/script.js'></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<noscript>
+			<p>Lo siento, necesitas activar JavaScript.</p>
+		</noscript>
+		<form action='' method='post'>
+			<label>Nombre</label><input type='text' id='nombre' placeholder="nombre"/><span id="errorNombre"></span>
+			<label>Primer apellido</label><input type='text' id='apellido1' placeholder="primer apellido"/><span id="errorApellido1"></span>
+			<label>Segundo apellido</label><input type='text' id='apellido2' placeholder="segundo apellido"/><span id="errorApellido2"></span>
+			<label>DNI</label><input type='text' id='DNI' placeholder="00000000x"/><span id="errorDNI"></span>
+			<fieldset id="sexo">
+				<legend>Sexo</legend>
+				<label>Mujer:</label> <input type='radio' name='sexo' value='Mujer'/><br/>
+				<label>Hombre:</label> <input type='radio' name='sexo' value='Hombre'/><br/>
+			</fieldset><span id="errorSexo"></span>
+			<input type="checkbox" id="aceptar"><label>Acepto las condiciones.</label><span id="errorCheckbox"></span>
+			<p>
+				<input type="button" id="crearUsuario" value="Nuevo usuario">
+				<input type="reset" id="limpiar" value="limpiar">	
+			</p>
+		</form>
+		<div id="contentList">
+			<div id="info"></div>
+			<ul id="lista"></ul>
+		</div>
+	</body>
+
+</html>

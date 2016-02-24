@@ -230,7 +230,6 @@
 			inputHombre.checked = false;
 			inputCheckbox.checked = false;
 			info.innerHTML = "";
-			lista.innerHTML = "";
 			mostrarError(inputNombre, errorNombre, false);
 			mostrarError(inputApellido1, errorApellido1, false);
 			mostrarError(inputApellido2, errorApellido2, false);

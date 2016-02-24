@@ -253,7 +253,6 @@
 			var dni = inputDNI.value.trim();
 
 			if(comprobarDatos(nombre, apellido1, apellido2 ,dni)){
-				console.log(inputSexo)
 				var usuario = new Usuario(nombre, apellido1, apellido2, dni);
 				setCookie("nombre", usuario.nombre, 10);
 				setCookie("apellido1", usuario.apellido1, 10);

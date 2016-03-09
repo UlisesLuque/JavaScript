@@ -1,0 +1,196 @@
+<!--
+	autor: Ulises Luque Páez
+-->
+
+<!DOCTYPE html>
+<html lang='es'>
+	<head>
+		<meta charset='UTF-8'>
+		<title>titulo</title>
+		<link rel='stylesheet' type='text/css' href='css/style.css'>
+
+	</head>
+	<body>
+		<main id="documentacion">
+		<h1>Documentación de Casas Rurales</h1>
+		<h2>Ulises Luque Páez</h2>
+			<section id="javaScript">
+				<h1>JavaSripct activo</h1>
+				<article>
+					<p>Este codigo se encuenta en el HTML</p>
+					<a href="index.html">Ver funcionamiento (debes desactivar JavaSripct).</a>
+					
+				</article>
+			</section>
+			<section id="cookies">
+				<h1>Cookies activas</h1>
+				<article>
+				<p>Este código se encuentra en el fichero inicio.js y lo utilizo en el index.html</p>
+				<p>Compruebo si están activas las cookies, y en caso negativo, cambio el css del elemento mensajeCookies no se muesta y lo muestro en bloque.
+					Calculo la posición respecto al lateral izquierdo, restando al ancho del body el ancho del mensaje y dividiendolo entre dos.
+					Además no muestro #content ni el header.
+				</p>
+				<p>Al span (x para cerrar) le puesto un manejador de enventos para que en caso de hacer click, desaparezca el mensajeCookies</p>
+				<a href="js/inicio.js">Ver código.</a>
+				<a href="index.html">Ver efecto (debes desactivar las cookies).</a>
+				<pre>
+if(!navigator.cookieEnabled){
+	$("#mensajeCookies").css({
+		"display": "block",
+		"left": (($("body").width() - $("#mensajeCookies").width()) / 2) + "px"
+	});
+	$("#content, header").css("display", "none");
+	$("#mensajeCookies span").click(function(){
+		$("#mensajeCookies").css("display", "none");
+	})
+}
+				</pre>
+				</article>
+			</section>
+			<section id="efectoInicio">
+				<h1>Efecto en el inicio</h1>
+				<article>
+					<p>Este código se encuentra en el fichero inicio.js y lo utilizo en el index.html</p>
+					<p>Primero cmabio el css del loader y lo muestro como bloque, despues le pongo opcacidad 0 a los elementos 
+					que quedan al frente por su posicion absoluta para que 
+					no aprezcan al iniciar. Establezco un tiempo de espera de 2s, y utilizo el efecto slideUp para que desapareza la animcacion de inicio.
+					Mediante un callback utilizo la funcion animate para darle opacidad al titulo con duración de dos segundos y el subtitulo con un segundo.
+					</p>
+					<a href="js/inicio.js">Ver código.</a>
+					<a href="index.html">Ver efecto.</a>
+					<pre>
+$(function(){
+	function animacion(){
+		$("#titulo h1, #titulo h2").css({opacity: 0});
+		setTimeout(function(){
+			$("#loader").slideUp("swing", function(){
+				$("#titulo h1").animate({opacity: 1}, 2000, function(){
+					$("#titulo h2").animate({opacity: 1}, 1000);
+				});
+			});
+		}, 2000);
+	}
+
+	$("#loader").css("display", "block");
+	animacion();	
+
+});				
+					</pre>
+				</article>
+			</section>
+			<section id="efectoNombre">
+				<h1>Efecto en el nombre</h1>
+				<article>
+					<p>Este código se encuentra en el fichero detalles.js y lo utilizo en detalles.html</p>
+					<p>Primero cambio y el css de del título y le pongo un margen negativo hacia la izquierda. Añado window el manejador de enventos
+					para el evento scroll, y le paso como argumento una función anóniima. Cálcula la posición de titulo añdo una animación que 
+					le pone el margen a 0, desplazanolo a la derecha. Ésta animación dura 1.5 segundos.</p>
+					<a href="js/detalles.js">Ver código.</a>
+					<a href="detalles.html">Ver efecto.</a>
+				<pre>
+$(function(){
+	var titulo = $(".casa h1")
+	titulo.css("marginLeft", "-10em");
+	$(window).on("scroll", function(){
+		if($(window).scrollTop() > titulo.offset().top - $(window).height()){
+			titulo.animate({
+				"marginLeft": "0em"
+			}, 1500)
+		}
+	})
+});
+				</pre>
+				</article>
+			</section>
+			<section id="lightboxImagenes">
+				<h1>Lightbox en las imágenes</h1>
+				<p>Este plugin lu uso en la página detalles.html.</p>
+				<article>
+					<a href="js/detalles.js">Ver código.</a>
+					<a href="detalles.html">Ver efecto.</a>
+				</article>
+			</section>
+			<section id="validacion">
+				<h1>Validación</h1>
+				<p>Éste código se encuentra en reserva.js y lo utilizo en formulario.html.</p>
+				<article>
+					<a href="js/reserva.js">Ver código.</a>
+					<a href="formulario.html">Ver funcionamiento.</a>
+				</article>
+			</section>
+			<section id="fechas">
+				<h1>Fechas</h1>
+				<p>Utilizo el datepcker de la librería JqueryUi en el script reserva.js y la página formulario.html
+				He utilizado todos los arvhicos minimificados (jquery-uy-min.js, jquery-ui.min.css, jquery-ui.structure.min.css, jquery-ui.theme.min.css)</p>
+				<article>
+					<a href="js/reserva.js">Ver código.</a>
+					<a href="formulario.html">Ver funcionamiento.</a>
+					<pre>
+//Con estas opciones lo traduzco a español.
+$.datepicker.regional['es'] = {
+	closeText: 'Cerrar',
+	prevText: '<Ant',
+	nextText: 'Sig>',
+	currentText: 'Hoy',
+	monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+	monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+	dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+	dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+	dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+	weekHeader: 'Sm',
+	dateFormat: 'dd/mm/yy',
+	firstDay: 1,
+	isRTL: false,
+	showMonthAfterYear: false,
+	yearSuffix: ''
+};
+$.datepicker.setDefaults($.datepicker.regional['es']);
+
+$( "#fechaEntrada" ).datepicker({
+  changeMonth: true,
+  dateFormat: "dd-mm-yy",
+  numberOfMonths: 1,
+  minDate: +1, 
+  onClose: function( selectedDate ) {
+  	if(selectedDate){
+  		fecha = selectedDate.split("-");
+    	$( "#fechaSalida" ).datepicker( "option", "minDate", (parseInt(fecha[0])+1) + "-" + fecha[1] + "-" + fecha[2]);// En el último parámetro cálulo que la fecha de salida comienze desde el día siguiente.
+  	}
+  }
+});
+$( "#fechaSalida" ).datepicker({
+  changeMonth: true,
+  dateFormat: "dd-mm-yy",
+  numberOfMonths: 1,
+  maxDate: 30,
+  minDate: +2, 
+  onClose: function( selectedDate ) {
+  	if(selectedDate){
+  		fecha = selectedDate.split("-");
+    	$( "#fechaEntrada" ).datepicker( "option", "maxDate", (parseInt(fecha[0])-1) + "-" + fecha[1] + "-" + fecha[2]);// En el último parámetro cálculo que la fecha de entrada comienze desde el día anterior.
+  	}
+  }
+});
+					</pre>
+				</article>
+			</section>
+			<section id="erroresDeValidacion">
+				<h1>Errores de validación</h1>
+				<p>Para los errores de validación utililo JQuery y css. Éste código se encuentra en reserva.js y lo utilizo en la página formulario.html</p>
+				<article>
+					<a href="js/reserva.js">Ver código.</a>
+					<a href="formulario.html">Ver efecto.</a>
+				</article>
+			</section>
+			</section>
+			<section id="jqueryUI">
+				<h1>JqueryUi</h1>
+				<p>De ésta librería solo utilizo el Date Picker, ya explicado más arriba.</p>
+				<article>
+					<a href="js/reserva.js">Ver código.</a>
+					<a href="formulario.html">Ver funcionamiento.</a>
+				</article>
+			</section>
+		</main>
+	</body>
+</html>

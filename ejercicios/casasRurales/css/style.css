@@ -1,0 +1,823 @@
+*{
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
+
+html{
+  min-height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+noscript{
+  padding: 1em;
+  display: block;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  color: white;
+  background: #222;
+  z-index: 3;
+}
+
+html #loader{
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: #222;
+  z-index: 1;
+}
+
+
+#documentacion section{
+  background: white;
+  margin: 0em 2em 2em 2em;
+  padding: 2em;
+  border-radius: 5px;
+}
+
+#documentacion p, #documentacion pre{
+  margin: 1em 0;
+}
+
+#documentacion p{
+  text-align: justify;
+}
+
+#documentacion pre{
+  background: #222;
+  color: white;
+  padding: 2em;
+  border-radius: 5px;
+  overflow: scroll;
+}
+
+#documentacion h1{
+  margin: 0 0 2em 0;
+}
+#documentacion a{
+  display: block;
+  margin: 1em 0;
+}
+
+#documentacion>h1{
+  color: white;
+  margin:1em;
+}
+
+#documentacion>h2{
+  color: white;
+  margin: 1.3em;
+}
+
+@keyframes animacionLoader{
+  0%{transform: rotate(0deg)}
+  8.34%{transform: rotate(30deg)}
+  16.68%{transform: rotate(60deg)}
+  25%{transform: rotate(90deg)}
+  33.34%{transform: rotate(120deg)}
+  41.68%{transform: rotate(150deg)}
+  50%{transform: rotate(180deg)}
+  58.33%{transform: rotate(210deg)}
+  66.66%{transform: rotate(240deg)}
+  75%{transform: rotate(270deg)}
+  83.33%{transform: rotate(300deg)}
+  91.66%{transform: rotate(330deg)}
+  100%{transform: rotate(360deg)}
+}
+
+#loaderAnimation{
+  animation-name: animacionLoader;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: step-end;
+  width: 8em;
+  height: 8em;
+  margin: 16.5em auto;
+  border-radius: 1000px;
+  position: relative;
+}
+
+#loaderAnimation img{
+  width: 1.2em;
+  position: absolute;
+}
+
+#loaderAnimation img:nth-child(1){
+  left: 3.5em;
+  
+}
+
+#loaderAnimation img:nth-child(2){
+  opacity: 0.75;
+  transform: rotate(-30deg);
+  top: 0.4em;
+  left: 2em;
+}
+
+#loaderAnimation img:nth-child(3){
+  opacity: 0.50;
+  transform: rotate(-60deg);
+  top: 1.55em;
+  left:01em
+}
+
+#loaderAnimation img:nth-child(4){
+  opacity: 0.20;
+  transform: rotate(-90deg);
+  top: 3.05em;
+  left: 0.7em;
+}
+
+body{
+  background: no-repeat url("img/macro2560x1600_dark.jpg");
+  background-size: cover;
+}
+
+
+#mensajeCookies{
+  display: none;
+  background: rgba(255,255,255, 0.8);
+  width: auto;
+  margin: 0 auto;
+  padding: 2em 2em;
+  color: black;
+  text-align: center;
+  position: fixed;
+  bottom: 50%;
+  border-radius: 3px;
+}
+
+#mensajeCookies span{
+  position: absolute;
+  right: 0.5em;
+  top: 0.1em;
+  cursor: pointer;
+}
+
+main::after{
+ *display: none;
+}
+
+#botonMenu{
+  color: rgba(0, 0, 0, 0);
+  padding: 0.55em 0;
+  background: black;
+  text-decoration: none;
+  background:  no-repeat url(img/menu_white.svg);
+  background-size: 2.3em;
+}
+
+#navExp a{
+  color: rgba(0, 0, 0, 0);
+}
+
+#botonMenuVolver{
+  color: rgba(0, 0, 0, 0);
+  padding: 0.55em 0;
+  background: black;
+  text-decoration: none;
+  background:  no-repeat url(img/menu.svg);
+  background-size: 2.3em;
+}
+
+
+@keyframes animacionBoton {
+    from { transform: rotate(0deg);}
+    to { transform: rotate(-90deg);}
+}
+
+#botonMenuVolver{
+  animation: animacionBoton 1s;
+  transform: rotate(-90deg);
+  position: absolute;
+  right: 0;
+}
+
+nav{
+  text-align: right;
+  padding: 0.55em 0;
+}
+
+#navExp{
+  margin: 0;
+  background: #47A823;
+  z-index: 1;
+}
+
+#menu{
+  z-index: 1;
+  display: none;
+}
+
+#menu li a:hover{
+  color: #47A823;
+}
+
+@keyframes animacionNav {
+    from { height: 0em; width: 0;}
+    to {height: 9.9em; width: 100%;}
+}
+
+
+#menu:target{
+  animation: animacionNav 0.5s;
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  background: white;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0px 0px 10px black;
+}
+
+@keyframes animacionLi {
+    from { opacity: 0;}
+    to {opacity: 1;}
+}
+
+#menu:target li{
+  animation-name: animacionLi;
+  animation-duration: 0.5s;
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards ;
+  padding: 1em 0;
+  display: block;
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.2);
+  opacity: 0;
+}
+
+#menu:target li a{
+  color: #47A823;
+  text-decoration: none;
+  
+}
+
+#buscar{
+  display: none;
+}
+
+#content main h1{
+  opacity: 0;
+  color: white;
+  text-align: center;
+  font-size: 24pt;
+  font-weight: 600;
+  margin: 3em 1em 0 1em;
+  letter-spacing: 0.2em;
+  text-shadow: 0 0 10px black, 0 0 10px black;
+}
+
+#content main h2{
+  animation-name: animacionTitulo;
+  animation-duration: 2.5s;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  text-shadow: 0 0 5px black, 0 0 5px black, 0 0 10px black, 0 0 20px black;
+  color: white;
+  text-align: center;
+  font-size: 12pt;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+}
+
+@keyframes animacionReserva{
+    33% {transform: rotate(3deg);}
+    66% {transform: rotate(-3deg);}
+}
+
+main #entrar{
+  animation-name: animacionReserva;
+  animation-duration: 0.2s;
+  animation-iteration-count: 3;
+  animation-timing-function: 3s;
+  animation-delay: 7s;
+}
+
+main .boton, #entrar{
+  border-radius: 5px;
+  border: 3px solid #47A823;
+  background: #47A823;
+  padding: 0.2em 0em;
+  width: 6em;
+  margin: 3.5em auto 0 auto;
+  text-align: center;
+}
+
+main .boton:hover, #entrar:hover{
+  background: white;
+  border: 3px solid #47A823;
+}
+
+main .boton:hover a{
+    color: #47A823;
+
+}
+
+main .boton a{
+  color: white;
+  text-decoration: none;
+}
+
+footer{
+  display: none;
+}
+
+.casa{
+  background: white;
+  border: 1px solid lightgrey;
+  padding-bottom: 2em;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(100,100,100, 0.2);
+}
+
+.casa .precio{
+    font-size: 20pt;
+    font-weight: 700;
+    float: right;
+    text-align: center;
+    border: none;
+    margin: 0.55em 0.55em  0 0;
+}
+
+#casas h1, #casas p{
+  display: inline-block;
+}
+
+.casa #listaImagenes{
+  width: 97.5%;
+  display: flex;
+  padding: 0 0em;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#listaImagenes a{
+   flex: 1;
+}
+
+#listaImagenes a{
+   flex: 1;
+}
+
+#casaDetalles img{
+  display: block;
+  width: 97%;
+  margin: 0em auto;
+  padding: 0.9em 0 0 0em;
+  height: 98%;
+  margin: 0 auto;
+}
+
+.casa img{
+  width: 100%;
+  margin: 0em auto;
+  padding: 0em;
+  height: 98%;
+  margin: 0 auto;
+}
+
+.casa>img{
+  display: block;
+  width: 100%;
+  margin: 0 auto 0.5em auto;
+  border-radius: 5px 5px 0 0;
+}
+
+#casaDetalles h1{
+    font-size: 22pt;
+    padding: 0em 0.7em;
+    margin: 1em;
+}
+
+
+
+.casa h1{
+  margin: 0.85em;
+  text-transform: uppercase;
+
+}
+.casa p:not(.precio){
+  padding: 0em 1em 1em 1.45em;
+  background: white;
+}
+
+.casa iframe{
+  display: block;
+  height: 20%;
+  margin: 1.3em auto;
+  width: 95%;
+}
+
+#contenedor{
+  padding-top: 0.001em;
+  background: whitesmoke;
+}
+
+span.error{
+  color: red;
+  font-size: 8pt;
+  margin: 0.3em 0 0 0;
+
+}
+
+input.error{
+  outline: 1px solid red;
+}
+
+
+#reserva{
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  border: 1px solid lightgrey;
+}
+
+#reserva label{
+  margin-top: 1em;
+}
+
+#buscarAside label, fieldset{
+  margin: 1em 0;
+}
+
+fieldset label{
+  margin: 1em;
+  line-height: 2em;
+}
+
+fieldset input{
+  float: right;
+  margin: 0.6em 1em 0 0;
+}
+
+input[type=checkbox]{
+  display: inline-block;
+}
+
+
+label[for=checkbox]{
+  margin: 0em 0.5em;
+}
+
+#buscar a, #reserva a{
+  text-decoration: none;
+}
+
+input[type=text], input[type=number], input[type=date], input[type=email]{
+  padding: 0 0.2em;
+}
+
+form input[type=submit]{
+  border-radius: 5px;
+  border: 1px solid #47A823;
+  background: #47A823;
+  padding: 0.3em 0.5em;
+  width: 4.5em;
+  margin: 1em auto;
+  text-align: center;
+  color: white;
+  height: 100%;
+}
+
+aside{
+  display: none;
+}
+
+@media all and (min-width:768px) {
+  
+  nav{
+    border-radius: 2px;
+    background: white;
+    margin: 2em 3em;
+  }
+  
+  main{
+    padding-top: 3em;
+  }
+  
+  
+  span.error{
+  color: black;
+  display: block;
+  font-size: 10pt;
+  position: absolute;
+  margin: -5.1em 0 0 31em;
+  background: white;
+  padding: 0.6em 1em;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 0px grey;
+  
+}
+  
+  #errorCheckbox{
+    float: left;
+    margin: 0.5em 2.4em;
+  }
+
+  input.error{
+    outline: 1px solid red;
+  }
+  
+    
+  header #navExp{
+    width: 100%;
+    position: fixed;
+    background: white;
+    box-shadow: 0px 0px 10px grey;
+  }
+  
+  #navExp #menu a{
+    color: black;
+  }
+  
+  #navExp #menu a:hover{
+    color: #47A823;
+  }
+  
+  #navExp #menu a:hover{
+    color: black;
+  }
+  
+  #menu{
+    padding: 0;
+    display: inline-block;
+    background: white;
+    margin: 0 auto;
+    
+  }
+  
+  #menu li{
+    display: inline-block;
+  }
+  
+  #menu li:hover{
+    
+  }
+  
+  #menu a{
+    color: black;
+    text-decoration: none;
+    padding: 0.4em 2em 0.2em 2em;
+  }
+  
+  #casas{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  article{
+    padding-bottom: 4em;
+  }
+  #casas  article{
+    flex: 1;
+    min-width: 14em;
+    max-width: 20em;
+    margin: 1em;
+    height: 100%;
+  }
+  
+
+  
+  #casas .casa p:not(.precio){
+    font-size: 10pt;
+  }
+  
+  
+  #casas .precio{
+    font-size: 20pt;
+    font-weight: 700;
+    float: right;
+    text-align: center;
+    border: none;
+    margin: 0.55em 0.55em  0 0;
+  }
+  
+  #casas div{
+    margin: 1em auto 0 auto;
+  }
+  
+  .casa iframe{
+  display: block;
+  height: 20em;
+  margin: 1.3em auto;
+  width: 95%;
+}
+  
+  #botonMenu, #botonMenuVolver{
+    display: none;
+  }
+  
+  #buscar{
+    border-radius: 5px;
+    margin: 6em auto;
+    padding: 2em 0 1em 0em;
+    display: block;
+    background: rgba(0,0,0, 0.7);
+    color: white;
+    max-width: 44em;
+  }
+  
+  #buscar>p {
+    width: 40%;
+    display: inline-block;
+    margin: 1em 2em;
+  }
+  
+  #buscar p:last-child, #reserva input:last-child{
+    margin: 2em 0 1em 24.7em;
+  }
+  
+  #buscar input, #buscar select{
+    float: right;
+    height: 1.5em;
+    width: 9em;
+  }
+  
+  #buscar select{
+    width: 9.5em;
+  }
+  
+  #buscar input[type=submit]{
+    margin: 0em 1em 1em 0;
+    float: right;
+    height: 3em;
+    width: 224%;
+  }
+  
+  form input[type=submit]:hover{
+    background: white;
+    border: 3px solid #47A823;
+    color: #47A823;
+    cursor: pointer;
+  }
+  
+  footer{
+    padding: 0.5em 0;
+    background: #47A823;
+    display: block;
+    text-align: center;
+  }
+  
+  footer p{
+    margin: 0.5em 0em;
+  }
+  
+  footer a{
+    font-size: 10pt;
+    text-decoration: none;
+    color: white;
+  }
+  
+  #reserva{
+    display: block;
+    padding: 1.5em 3em;
+    background: white;
+    width: 25em;
+    margin: 1em auto 0em auto;
+    border-radius: 5px;
+    height: 42em;
+    box-shadow: 0 0 10px rgba(100,100,100, 0.2);
+  }
+  
+  #reserva h1{
+    text-align: center;
+    font-size: 22pt;
+    margin: 0 0 2em 0;
+  }
+  
+  #reserva label{
+    display: block;
+    margin: 2.5em 0;
+  }
+  
+  #reserva input{
+    float: right;
+    width: 13em;
+    margin-top: -4.7em;
+  }
+  
+  #reserva p{
+    margin: 2em 0 0 0;
+    display: block;
+  }
+  #reserva p *{
+    margin: 0;
+    display: inline-block
+  }
+  
+  #reserva input[type=submit]{
+    height: auto;
+    width: 5em;
+    margin-top: 0em;
+  }
+  
+  #reserva input[type=checkbox]{
+    float: left;
+    width: auto;
+    margin-right: 1em;
+  }
+  
+}
+  
+@media all and (min-width:992px) {
+  
+  #contenedor{
+    padding: 3em 1em 1em 1em;
+    display: flex;
+  }
+  main{
+    flex: 70;
+    padding: 1em 1em 1em 1em;
+  }
+  
+  #casas article{
+    width: 17em;
+  }
+  
+  aside{
+    border-radius: 2px;
+    padding: 1em 0em;
+    margin: 1em;
+    display: flex;
+    flex: 30;
+    flex-direction: column;
+  }
+  
+  aside section article, iframe{
+      box-shadow: 0px 0px 10px rgba(100,100,100, 0.2);
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    margin: 1em 0;
+    background: white;
+    width: 100%;
+  }
+  
+  aside iframe{
+    width: 100%;
+  }
+  
+  aside #contacto{
+    padding: 5.3em 0em 1em 0em;
+    background: white no-repeat url("img/telefono.svg");
+    background-size:4em;
+    background-position: center 1em;
+    text-align: center;
+    margin: 2em 0 0em 0;
+
+  }
+  
+  aside #contacto p{
+    margin: 0.5em 0;
+  }
+  
+  aside #contacto p:last-child{
+    font-size: 24pt;
+    color: #47A823;
+    font-weight: 600;
+  }
+  
+  aside #buscarAside{
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 1em 2em 1em 2em;
+    background: white;
+    border: 1px solid lightgray;
+    box-shadow: 0px 0px 10px rgba(100,100,100, 0.2);
+  }
+  
+  aside #buscarAside h1{
+    margin: 0.5em 0 0.5em 0;
+  }
+  
+  aside #buscarAside input, select{
+    width: 100%;
+  }
+  
+  aside #buscarAside input[type=submit]{
+    margin-top: 3em;
+  }
+
+}
+
+@media all and (min-width:1024px) {
+    .casa{
+      margin: 1em 2em;
+    }
+  
+    #contenedor{
+      padding-bottom: 2em;
+    }
+}
+
+
+

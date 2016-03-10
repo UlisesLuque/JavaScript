@@ -8,20 +8,7 @@ $(function(){
 				});
 			});
 		}, 2000);
-	}
-
-	if(!navigator.cookieEnabled){
-		$("#mensajeCookies").css({
-			"display": "block",
-			"left": (($("body").width() - $("#mensajeCookies").width()) / 2) + "px"
-		});
-		$("#content, header").css("display", "none");
-		$("#mensajeCookies span").click(function(){
-			$("#mensajeCookies").css("display", "none");
-		})
-	}
-
+	}	
 	$("#loader").css("display", "block");
-	animacion();	
-
+	animacion();
 });

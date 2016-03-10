@@ -17,63 +17,62 @@
 
 	</head>
 	<body>
-		<noscript>
-			<p>Necesita activar JavaScript. Puede consultar la <a href="https://support.google.com/adsense/answer/12654?hl=es">siguiente página</a> para más información.</p>
-		</noscript>
-		<div id="loader">
-			<div id="loaderAnimation">
-				<img src="css/img/leave.svg">
-				<img src="css/img/leave.svg">
-				<img src="css/img/leave.svg">
-				<img src="css/img/leave.svg">
+		<div id="contenidoPagina">
+			<noscript>
+				<p>Necesita activar JavaScript. Puede consultar la <a href="https://support.google.com/adsense/answer/12654?hl=es">siguiente página</a> para más información.</p>
+			</noscript>
+			<div id="loader">
+				<div id="loaderAnimation">
+					<img src="css/img/leave.svg">
+					<img src="css/img/leave.svg">
+					<img src="css/img/leave.svg">
+					<img src="css/img/leave.svg">
+				</div>
+			</div>
+			<header>
+				<nav>
+					<a id='botonMenu' href='#menu'>MenU</a>
+					<ul id='menu'>
+						<a id='botonMenuVolver' href='#'>Menu</a>
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="lista.html">Casas rurales</a></li>
+						<li><a href="">Sobre mí</a></li>
+					</ul>
+				</nav>
+			</header>
+			<div id="content">
+				<main>
+					<section>
+						<article id="titulo">
+						<h1>TU CASA RURAL</h1>
+						<h2>MAS ALLÁ DE TUS SENTIDOS</h2>
+							<div id="entrar" class="boton" ><a href="lista.html">Reserva ya</a></div>
+						</article>
+					</section>
+					<section>
+						<article>
+							<form id="buscar">
+									<p><label>Fecha de entrada</label><input type='date' placeholder="dd/mm/AAAA"/></p>
+									<p><label>Fecha de salida</label><input type='date' placeholder="dd/mm/AAAA"/></p>
+									<p><label>Adultos</label><input type='number' value="0"/></p>
+									<p><label>Niños</label><input type='number' value="0"/></p>
+									<p><label>Nº de habitaciones</label><input type='number' value="1"/></p>
+									<p><label>Precio</label>
+										<select>
+											<option value="">0 - 50</option>
+											<option value="">50 - 100</option>
+											<option value="">100 - 150</option>
+											<option value="">150- 200</option>
+											<option value="">200 - 250</option>
+										</select>
+									</p>
+									<p><input type='submit' value='Buscar' name='enviar'/></p>
+							</form>
+						</article>
+					</section>
+				</main>
 			</div>
 		</div>
-		<header>
-			<nav>
-				<a id='botonMenu' href='#menu'>MenU</a>
-				<ul id='menu'>
-					<a id='botonMenuVolver' href='#'>Menu</a>
-					<li><a href="index.html">Inicio</a></li>
-					<li><a href="lista.html">Casas rurales</a></li>
-					<li><a href="">Sobre mí</a></li>
-				</ul>
-			</nav>
-		</header>
-		<noscript>
-			<p>Necesita activar JavaScript. Puede consultar la <a href="https://support.google.com/adsense/answer/12654?hl=es">siguiente página</a> para más información.</p>
-		</noscript>
-		<div id="content">
-			<main>
-				<section>
-					<article id="titulo">
-					<h1>TU CASA RURAL</h1>
-					<h2>MAS ALLÁ DE TUS SENTIDOS</h2>
-						<div id="entrar" class="boton" ><a href="lista.html">Reserva ya</a></div>
-					</article>
-				</section>
-				<section>
-					<article>
-						<form id="buscar">
-								<p><label>Fecha de entrada</label><input type='date' placeholder="dd/mm/AAAA"/></p>
-								<p><label>Fecha de salida</label><input type='date' placeholder="dd/mm/AAAA"/></p>
-								<p><label>Adultos</label><input type='number' value="0"/></p>
-								<p><label>Niños</label><input type='number' value="0"/></p>
-								<p><label>Nº de habitaciones</label><input type='number' value="1"/></p>
-								<p><label>Precio</label>
-									<select>
-										<option value="">0 - 50</option>
-										<option value="">50 - 100</option>
-										<option value="">100 - 150</option>
-										<option value="">150- 200</option>
-										<option value="">200 - 250</option>
-									</select>
-								</p>
-								<p><input type='submit' value='Buscar' name='enviar'/></p>
-						</form>
-					</article>
-				</section>
-			</main>
-		</div>
-			<p id='mensajeCookies'>Las cookies son necesarias para ésta página, actívelas. <span>x</span></p>
+		<p id='mensajeCookies'>Las cookies son necesarias para ésta página, actívelas. <span>x</span></p>
 	</body>
 </html>

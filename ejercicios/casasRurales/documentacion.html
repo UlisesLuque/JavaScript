@@ -27,23 +27,26 @@
 				<h1>Cookies activas</h1>
 				<article>
 				<p>Este código se encuentra en el fichero inicio.js y lo utilizo todas las páginas .html</p>
-				<p>Compruebo si están activas las cookies, y en caso negativo, cambio el css del elemento mensajeCookies no se muesta y lo muestro en bloque.
+				<p>Compruebo si están activas las cookies, y en caso negativo, cambio el css del elemento mensajeCookies que no se muestra y lo muestro en bloque.
 					Calculo la posición respecto al lateral izquierdo, restando al ancho del body el ancho del mensaje y dividiendolo entre dos.
-					Además no muestro #content ni el header.
+					Además no muestro #contenidoPagina que contiene toda todo el documento, por lo que se deben activar las cookies para poder navegar. .
 				</p>
 				<p>Al span (x para cerrar) le puesto un manejador de enventos para que en caso de hacer click, desaparezca el mensajeCookies</p>
 				<a href="js/inicio.js">Ver código.</a>
 				<a href="index.html">Ver efecto (debes desactivar las cookies).</a>
 				<pre>
-if(!navigator.cookieEnabled){
-	$("#mensajeCookies").css({
-		"display": "block",
-		"left": (($("body").width() - $("#mensajeCookies").width()) / 2) + "px"
-	});
-	$("#mensajeCookies span").click(function(){
-		$("#mensajeCookies").css("display", "none");
-	})
-}
+$(function(){
+	if(!navigator.cookieEnabled){
+		$("#mensajeCookies").css({
+			"display": "block",
+			"left": (($("body").width() - $("#mensajeCookies").width()) / 2) + "px"
+		});
+		$("#contenidoPagina").css("display", "none");
+		$("#mensajeCookies span").click(function(){
+			$("#mensajeCookies").css("display", "none");
+		})
+	}
+});
 				</pre>
 				</article>
 			</section>

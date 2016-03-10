@@ -9,6 +9,7 @@ $(function(){
 			"display": "block",
 			"left": (($("body").width() - $("#mensajeCookies").width()) / 2) + "px"
 		});
+		$("#contenidoPagina").css("display", "none");
 		$("#mensajeCookies span").click(function(){
 			$("#mensajeCookies").css("display", "none");
 		})
